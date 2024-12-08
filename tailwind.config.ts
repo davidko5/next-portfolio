@@ -9,8 +9,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'geist-sans': 'var(--font-geist-sans)',
+        'geist-mono': 'var(--font-geist-mono)',
+        'br-sonoma': 'var(--font-br-sonoma)'
+      },
       colors: {
         accent: '#FFE7C8',
+        primary: '#FFF4D7',
         // background: 'hsl(var(--background))',
         // foreground: 'hsl(var(--foreground))',
         // card: {
