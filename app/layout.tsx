@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   title: 'Davyd Kondratenko Personal Portfolio',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
