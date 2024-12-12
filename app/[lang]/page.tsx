@@ -2,8 +2,7 @@ import { GeneralInformation } from '@/lib/types';
 import AnimatedGradientBackground from '../ui/common/animated-background';
 import { PortfolioRoot } from '../ui/portfolio-root';
 
-// export const revalidate = 1;
-// export const dynamicParams = true
+// export const revalidate = false;
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'pl' }, { lang: 'ua' }];
@@ -19,7 +18,7 @@ async function getPageData(
 
   if (!res.ok) {
     throw new Error('Failed to fetch page data');
-  }
+  } else console.log(`fetched for ${localeMapping}`);
 
   return res.json();
 }
