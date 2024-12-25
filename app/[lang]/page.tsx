@@ -1,26 +1,41 @@
-import { GeneralInformation } from '@/lib/types';
+import { GeneralInformation, SocialMediaLink } from '@/app/lib/types';
 import AnimatedGradientBackground from '../ui/common/animated-background';
-import { PortfolioRoot } from '../ui/portfolio-root';
-
-// export const revalidate = false;
+import { PortfolioRoot } from '../ui/[lang]/portfolio-root';
+import { fetchData } from '../lib/api';
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'pl' }, { lang: 'ua' }];
 }
 
-async function getPageData(
-  lang: string
-): Promise<{ data: GeneralInformation }> {
+async function getPageData(lang: string): Promise<
+  | {
+      generalInformation: GeneralInformation;
+      socialMediaLinks: Array<SocialMediaLink>;
+    }
+  | undefined
+> {
   const localeMapping = lang === 'ua' ? 'uk' : lang === 'pl' ? 'pl' : 'en';
-  const res = await fetch(
-    `https://strapi-resume.onrender.com/api/general-information?locale=${localeMapping}`
-  );
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch page data');
-  } else console.log(`fetched for ${localeMapping}`);
+  const endpoints = {
+    generalInformation: `https://strapi-resume.onrender.com/api/general-information?locale=${localeMapping}`,
+    socialMediaLinks:
+      'https://strapi-resume.onrender.com/api/social-media-links',
+  };
 
-  return res.json();
+  try {
+    const [generalInformation, socialMediaLinks] = await Promise.all([
+      fetchData<{ data: GeneralInformation }>(endpoints.generalInformation),
+      fetchData<{ data: Array<SocialMediaLink> }>(endpoints.socialMediaLinks),
+    ]);
+
+    return {
+      generalInformation: generalInformation.data,
+      socialMediaLinks: socialMediaLinks.data,
+    };
+  } catch (error) {
+    if (error instanceof Error)
+      throw new Error(`Error fetching data: ${error.message}`);
+  }
 }
 
 export default async function Page({
@@ -29,12 +44,19 @@ export default async function Page({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+
   const pageData = await getPageData(lang);
+
+  if (!pageData) return null;
 
   return (
     <>
       <AnimatedGradientBackground />
-      <PortfolioRoot generalInformation={pageData.data} />
+      <PortfolioRoot
+        generalInformation={pageData.generalInformation}
+        socialMediaLinks={pageData.socialMediaLinks}
+        lang={lang}
+      />
     </>
   );
 }

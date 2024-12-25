@@ -7,3 +7,8 @@ export interface GeneralInformation {
   email: string;
   placeOfResidence: string;
 }
+
+export interface SocialMediaLink {
+  platformName: string;
+  url: string;
+}
