@@ -1,48 +1,40 @@
-import { GeneralInformation, SocialMediaLink } from '@/app/lib/types';
-import { LanguageSelect } from './language-select';
-import { getDictionary } from '../../[lang]/dictionaries';
+import {
+  Experience,
+  GeneralInformation,
+  Project,
+  SocialMediaLink,
+} from '@/app/lib/types';
 import { RootLeftSide } from './root-left-side';
+import { RootRightSide } from './root-right-side';
 
-export async function PortfolioRoot({
+export function PortfolioRoot({
   generalInformation,
   socialMediaLinks,
+  experiences,
+  projects,
   lang,
 }: {
   generalInformation: GeneralInformation;
   socialMediaLinks: Array<SocialMediaLink>;
+  experiences: Array<Experience>;
+  projects: Array<Project>;
   lang: string;
 }) {
-  const dict = await getDictionary(lang);
-
   return (
     <div className='flex justify-between'>
       {/* Left Side */}
-      <RootLeftSide generalInformation={generalInformation} socialMediaLinks={socialMediaLinks}  lang={lang} />
+      <RootLeftSide
+        lang={lang}
+        generalInformation={generalInformation}
+        socialMediaLinks={socialMediaLinks}
+      />
       {/* Right Side */}
-      <div className='w-[517px]'>
-        <div className='flex justify-end'>
-          <LanguageSelect lang={lang} />
-        </div>
-        <div className='mr-[72px]'>
-          <h2 id='aboutMe' className='mt-[59px] text-2xl font-semibold'>
-            {dict.aboutSection}
-          </h2>
-          <p className='mt-[24px] text-accent text-lg font-light'>
-            {generalInformation.mainDetailsInfo}
-          </p>
-          <p className='mt-[12px] text-white text-base font-normal'>
-            {generalInformation.mainShortInfo}
-          </p>
-
-          <h2 id='experience' className='mt-[82px] text-2xl font-semibold'>
-            {dict.experienceSection}
-          </h2>
-
-          <h2 id='projects' className='mt-[82px] text-2xl font-semibold'>
-            {dict.projectsSection}
-          </h2>
-        </div>
-      </div>
+      <RootRightSide
+        lang={lang}
+        generalInformation={generalInformation}
+        experiences={experiences}
+        projects={projects}
+      />
     </div>
   );
 }

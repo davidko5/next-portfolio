@@ -30,8 +30,6 @@ export async function RootLeftSide({
 }) {
   const dict = await getDictionary(lang);
 
-  console.log(socialMediaLinks);
-
   return (
     <div className='ml-[72px] w-[517px]'>
       <div
@@ -76,19 +74,13 @@ export async function RootLeftSide({
 
       {/* Social media links */}
       <ul className='mt-[82px] flex'>
-        {socialMediaLinks.map((socialMedia) => {
-          console.log(
-            socialMedia.platformName,
-            linkToSvgMap[socialMedia.platformName]
-          );
-          return (
-            <li className='mr-[26px]' key={socialMedia.url}>
-              <Link href={socialMedia.url} target='_blank'>
-                {linkToSvgMap[socialMedia.platformName]}
-              </Link>
-            </li>
-          );
-        })}
+        {socialMediaLinks.map((socialMedia) => (
+          <li className='mr-[26px]' key={socialMedia.url}>
+            <Link href={socialMedia.url} target='_blank'>
+              {linkToSvgMap[socialMedia.platformName]}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

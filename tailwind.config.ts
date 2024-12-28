@@ -12,11 +12,12 @@ export default {
       fontFamily: {
         'geist-sans': 'var(--font-geist-sans)',
         'geist-mono': 'var(--font-geist-mono)',
-        'br-sonoma': 'var(--font-br-sonoma)'
+        'br-sonoma': 'var(--font-br-sonoma)',
       },
       colors: {
         accent: '#FFE7C8',
         primary: '#FFF4D7',
+        lightBlue: '#C5E1FF',
         // background: 'hsl(var(--background))',
         // foreground: 'hsl(var(--foreground))',
         // card: {
