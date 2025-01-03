@@ -32,6 +32,7 @@ export interface Project {
   name: string;
   description: string;
   date: string | null;
+  projectUrl: string;
   skills: Array<Skill>;
   thumbnail: {
     url: string;
