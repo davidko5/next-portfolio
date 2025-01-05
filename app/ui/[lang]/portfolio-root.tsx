@@ -21,7 +21,8 @@ export function PortfolioRoot({
   lang: string;
 }) {
   return (
-    <div className='flex justify-between gap-10 h-[100vh] overflow-auto'>
+    // overflow-auto is needed for left side to be sticky 
+    <div className='md:flex justify-between gap-10 h-[100vh] md:overflow-auto'>
       {/* Left Side */}
       <RootLeftSide
         lang={lang}

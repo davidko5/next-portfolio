@@ -27,7 +27,7 @@ export async function RootRightSide({
         <LanguageSelect lang={lang} />
       </div>
 
-      <div className='mr-[72px]'>
+      <div className='md:mr-[72px]'>
         {/* About Section */}
         <div className='ml-6'>
           <h2 id='aboutMe' className='mt-[59px] text-2xl font-semibold'>
@@ -72,7 +72,7 @@ export async function RootRightSide({
         ))}
 
         {/* Contact section */}
-        <div className='mb-[102px]'>
+        <div className='ml-6 md:ml-0 mb-[102px]'>
           <h2 className='text-[32px] font-light mt-[82px]'>
             {dict.letsWorkTogether}
           </h2>
