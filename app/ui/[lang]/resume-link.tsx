@@ -15,7 +15,7 @@ export function ResumeLink({
   return (
     <HoverFocusProvider
       render={(state) => (
-        <div className='flex items-center'>
+        <div className='flex items-center ml-6'>
           <a
             className={clsx(
               'text-sm font-medium leading-6 underline underline-offset-[3px] decoration-1 transition-all ease-in-out duration-300',

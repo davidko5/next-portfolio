@@ -31,9 +31,9 @@ export async function RootLeftSide({
   const dict = await getDictionary(lang);
 
   return (
-    <div className='ml-[72px] w-[517px]'>
+    <div className='ml-[72px] w-[517px] sticky top-0'>
       <div
-        className={`${archivo_black.className} text-5xl text-accent mt-[102px] w-[486px]`}
+        className={`${archivo_black.className} text-5xl text-accent mt-[102px] max-w-[486px]`}
       >
         {generalInformation.name}
       </div>

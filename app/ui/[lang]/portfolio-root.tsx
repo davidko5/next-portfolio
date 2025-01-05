@@ -21,7 +21,7 @@ export function PortfolioRoot({
   lang: string;
 }) {
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between gap-10 h-[100vh] overflow-auto'>
       {/* Left Side */}
       <RootLeftSide
         lang={lang}
