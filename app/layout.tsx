@@ -54,7 +54,7 @@ const brSonoma = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Davyd Kondratenko Personal Portfolio',
+  title: 'Davyd Kondratenko',
 };
 
 export default async function RootLayout({

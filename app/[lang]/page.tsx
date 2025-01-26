@@ -32,12 +32,13 @@ async function getPageData(lang: string): Promise<
   };
 
   try {
-    const [generalInformation, socialMediaLinks, experiences, projects] = await Promise.all([
-      fetchData<{ data: GeneralInformation }>(endpoints.generalInformation),
-      fetchData<{ data: Array<SocialMediaLink> }>(endpoints.socialMediaLinks),
-      fetchData<{ data: Array<Experience> }>(endpoints.experience),
-      fetchData<{ data: Array<Project> }>(endpoints.projects),
-    ]);
+    const [generalInformation, socialMediaLinks, experiences, projects] =
+      await Promise.all([
+        fetchData<{ data: GeneralInformation }>(endpoints.generalInformation),
+        fetchData<{ data: Array<SocialMediaLink> }>(endpoints.socialMediaLinks),
+        fetchData<{ data: Array<Experience> }>(endpoints.experience),
+        fetchData<{ data: Array<Project> }>(endpoints.projects),
+      ]);
 
     return {
       generalInformation: generalInformation.data,
@@ -61,6 +62,9 @@ export default async function Page({
   const pageData = await getPageData(lang);
 
   if (!pageData) return null;
+
+  console.log(JSON.parse(JSON.stringify(pageData.experiences[0].description)));
+  console.log(typeof pageData.experiences[0].description);
 
   return (
     <>

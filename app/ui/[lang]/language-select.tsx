@@ -17,10 +17,10 @@ export const LanguageSelect = ({ lang }: { lang: string }) => {
 
   return (
     <Select onValueChange={handleLanguageChange} value={lang}>
-      <SelectTrigger className='w-[224px] border-0 mt-[3px] mr-[4px] text-white font-medium uppercase justify-center underline underline-offset-[3px]'>
+      <SelectTrigger className='w-[224px] border-0 mt-[3px] mr-[4px] bg-transparent text-white hover:text-accent data-[state=open]:text-accent font-medium uppercase justify-center underline underline-offset-[3px]'>
         <SelectValue placeholder='Select language' />
       </SelectTrigger>
-      <SelectContent className='mr-[-8px] border-0'>
+      <SelectContent className='mr-[-8px] border-0 bg-transparent'>
         <SelectGroup>
           <SelectItem value='en'>English</SelectItem>
           <SelectItem value='pl'>Polski</SelectItem>

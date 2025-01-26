@@ -33,10 +33,10 @@ export async function RootRightSide({
           <h2 id='aboutMe' className='mt-[59px] text-2xl font-semibold'>
             {dict.aboutSection}
           </h2>
-          <p className='mt-[24px] text-accent text-lg font-light'>
+          <p className='mt-[24px] text-accent text-lg font-light leading-[23.4px]'>
             {generalInformation.mainDetailsInfo}
           </p>
-          <p className='mt-[12px] text-white text-base font-normal'>
+          <p className='mt-[12px] text-white text-base font-normal leading-[20.8px]'>
             {generalInformation.mainShortInfo}
           </p>
         </div>
@@ -73,14 +73,14 @@ export async function RootRightSide({
 
         {/* Contact section */}
         <div className='ml-6 md:ml-0 mb-[102px]'>
-          <h2 className='text-[32px] font-light mt-[82px]'>
+          <h2 className='text-[32px] font-light mt-[82px] leading-[41.6px]'>
             {dict.letsWorkTogether}
           </h2>
-          <div className='flex items-center mt-6 font-medium'>
+          <div className='flex items-center mt-6 font-medium leading-[20.8px]'>
             <EnvelopeIcon className='text-accent mr-[9px]' />
             {generalInformation.email}
           </div>
-          <div className='flex items-center mt-3 font-medium'>
+          <div className='flex items-center mt-3 font-medium leading-[20.8px]'>
             <MapPointIcon className='text-accent ml-[2px] mr-[11px]' />
             {generalInformation.placeOfResidence}
           </div>

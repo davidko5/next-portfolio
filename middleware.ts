@@ -12,14 +12,17 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/api') || // API routes
     pathname === '/favicon.ico' || // Favicon
     pathname === '/robots.txt' || // Robots.txt
-    pathname === '/sitemap.xml' // Sitemap (if applicable)
+    pathname === '/sitemap.xml' || // Sitemap (if applicable)
+    /\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff|woff2|ttf|eot|otf)$/.test(
+      pathname
+    )
   ) {
     return NextResponse.next();
   }
 
   // Supported language prefixes
   const supportedLanguages = ['en', 'pl', 'ua'];
-  
+
   // Check if the path starts with any supported language and has more than just the language segment
   const isValidLang = supportedLanguages.some((lang) => {
     return pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`;

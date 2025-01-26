@@ -32,15 +32,15 @@ export async function RootLeftSide({
 
   return (
     <div className='ml-6 md:ml-[72px] w-[517px] md:sticky top-0'>
-      <div
-        className={`${archivo_black.className} text-5xl text-accent mt-[102px] max-w-[486px]`}
+      <h1
+        className={`${archivo_black.className} text-5xl text-accent mt-[102px] max-w-[486px] leading-[52.22px]`}
       >
         {generalInformation.name}
-      </div>
-      <p className='mt-[16px] text-primary text-2xl font-light'>
+      </h1>
+      <p className='mt-[16px] text-primary text-2xl font-light leading-[31.2px]'>
         {generalInformation.position}
       </p>
-      <p className='mt-[16px] text-white text-lg font-normal'>
+      <p className='mt-[16px] text-white text-lg font-normal leading-[23px]'>
         {generalInformation.sideShortInfo}
       </p>
 

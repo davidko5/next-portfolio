@@ -73,6 +73,7 @@ const AnimatedGradientBackground = () => {
             width: circle.width,
             height: circle.height,
             backgroundColor: circle.color,
+            boxShadow: '0px 4px 300px 0px rgba(0, 0, 0, 0.25) inset'
           }}
           animate={{
             x: circle.points.map((point) => point.x), // Sequential x positions
@@ -92,7 +93,7 @@ const AnimatedGradientBackground = () => {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'rgba(0, 0, 0, 0.1)', // Semi-transparent black overlay
+          background: 'rgba(0, 0, 0, .1)', // Semi-transparent black overlay
           backdropFilter: 'blur(152.5px)', // Blur effect
         }}
       />
@@ -104,7 +105,7 @@ const AnimatedGradientBackground = () => {
           inset: 0,
           backgroundImage: 'url(/bg-noise.png)', // Noise texture
           backgroundSize: 'cover',
-          // opacity: 0.4, // Transparency to blend with other layers
+          // opacity: 0.6, // Transparency to blend with other layers
           mixBlendMode: 'soft-light',
           pointerEvents: 'none',
         }}
