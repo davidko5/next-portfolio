@@ -63,9 +63,6 @@ export default async function Page({
 
   if (!pageData) return null;
 
-  console.log(JSON.parse(JSON.stringify(pageData.experiences[0].description)));
-  console.log(typeof pageData.experiences[0].description);
-
   return (
     <>
       <AnimatedGradientBackground />

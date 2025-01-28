@@ -7,9 +7,10 @@ export default function CustomBlocksRenderer({
 }: {
   content: BlocksContent;
 }) {
+
   return (
     <BlocksRenderer
-      content={content}
+    content={content}
       blocks={{
         list: ({ children }) => <ul className='list-[circle]'>{children}</ul>,
       }}

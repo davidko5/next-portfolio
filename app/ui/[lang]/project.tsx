@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import ArrowRightIcon from '../icons/arrow-right';
 import Link from 'next/link';
+import CustomBlocksRenderer from './custom-blocks-renderer';
 
 export function ProjectComponent({ project }: { project: Project }) {
   return (
@@ -54,10 +55,10 @@ export function ProjectComponent({ project }: { project: Project }) {
                 height='86'
                 className='w-[129px] h-[86px]'
               />
-              <div className='ml-5'>
-                <p className='text-sm leading-[18.2px]'>
-                  {project.description}
-                </p>
+              <div className='ml-5 text-sm leading-[18.2px]'>
+                  <CustomBlocksRenderer
+                   content={project.description || []}
+                   />
                 <div className='mt-3 flex flex-wrap gap-[10px]'>
                   {project.skills.map((skill, index) => (
                     <Badge key={index} variant='custom'>

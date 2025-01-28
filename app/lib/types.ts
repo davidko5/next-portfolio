@@ -1,3 +1,5 @@
+import { BlocksContent } from "@strapi/blocks-react-renderer";
+
 export interface GeneralInformation {
   name: string;
   position: string;
@@ -24,13 +26,13 @@ export interface Experience {
   from: string;
   till: string;
   isCurrent: boolean;
-  description: string;
+  description: BlocksContent;
   skills: Array<Skill>;
 }
 
 export interface Project {
   name: string;
-  description: string;
+  description: BlocksContent;
   date: string | null;
   projectUrl: string;
   skills: Array<Skill>;
