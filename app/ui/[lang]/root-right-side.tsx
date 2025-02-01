@@ -22,8 +22,8 @@ export async function RootRightSide({
 
   return (
     <div className='w-[517px]'>
-      {/* Language Select Dropdown */}
-      <div className='flex justify-end'>
+      {/* Language Select Dropdown rendered here for wide screens */}
+      <div className='md:flex justify-end hidden'>
         <LanguageSelect lang={lang} />
       </div>
 
@@ -47,13 +47,21 @@ export async function RootRightSide({
             {dict.experienceSection}
           </h2>
           <div className='border-l-[0.5px] border-l-white mt-6 pl-6'>
-            {experiences.map((experience, index) => (
-              <ExperienceComponent
-                key={index}
-                lang={lang}
-                experience={experience}
-              />
-            ))}
+            {experiences
+          // Sort projects by date descending. If no date provided, then it's ongoing, sort first.
+              .sort((a, b) =>
+                (a.till ? new Date(a.till) : new Date()).getTime() >
+                (b.till ? new Date(b.till) : new Date()).getTime()
+                  ? -1
+                  : 1
+              )
+              .map((experience, index) => (
+                <ExperienceComponent
+                  key={index}
+                  lang={lang}
+                  experience={experience}
+                />
+              ))}
           </div>
 
           {/* Link to full resume */}
@@ -67,9 +75,16 @@ export async function RootRightSide({
         >
           {dict.projectsSection}
         </h2>
-        {projects.map((project, index) => (
-          <ProjectComponent key={index} project={project} />
-        ))}
+        {projects
+          // Sort projects by date descending. If no date provided sort last.
+          .sort((a, b) =>
+            new Date(a.date || 0).getTime() > new Date(b.date || 0).getTime()
+              ? -1
+              : 1
+          )
+          .map((project, index) => (
+            <ProjectComponent key={index} project={project} />
+          ))}
 
         {/* Contact section */}
         <div className='ml-6 md:ml-0 mb-[102px]'>

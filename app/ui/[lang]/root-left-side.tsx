@@ -6,6 +6,7 @@ import EmailIcon from '../icons/email';
 import GithubLogoIcon from '../icons/linkedin-logo';
 import LinkedinLogoIcon from '../icons/github-logo';
 import { ReactElement } from 'react';
+import { LanguageSelect } from './language-select';
 
 const linkToSvgMap: { [key: string]: ReactElement } = {
   email: (
@@ -32,6 +33,10 @@ export async function RootLeftSide({
 
   return (
     <div className='ml-6 md:ml-[72px] w-[517px] md:sticky top-0'>
+      {/* Language Select Dropdown rendered here for wide screens */}
+      <div className='flex justify-end md:hidden'>
+        <LanguageSelect lang={lang} />
+      </div>
       <h1
         className={`${archivo_black.className} text-5xl text-accent mt-[102px] max-w-[486px] leading-[52.22px]`}
       >

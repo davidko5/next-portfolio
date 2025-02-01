@@ -56,9 +56,10 @@ export function ProjectComponent({ project }: { project: Project }) {
                 className='w-[129px] h-[86px]'
               />
               <div className='ml-5 text-sm leading-[18.2px]'>
-                  <CustomBlocksRenderer
-                   content={project.description || []}
-                   />
+                <CustomBlocksRenderer
+                  // The build was failing without the || [] for polish language
+                  content={project.description || []}
+                />
                 <div className='mt-3 flex flex-wrap gap-[10px]'>
                   {project.skills.map((skill, index) => (
                     <Badge key={index} variant='custom'>

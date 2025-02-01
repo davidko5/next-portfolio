@@ -31,10 +31,8 @@ export async function ExperienceComponent({
             : `${tillDate.getMonth()}/${tillDate.getFullYear()}`}
         </span>
       </div>
-      <div className='mt-4 pl-3'>
-        <div className='text-sm font-light leading-[18.2px]'>
-          <CustomBlocksRenderer content={experience.description} />
-        </div>
+      <div className='mt-4 pl-3 text-sm font-light leading-[18.2px]'>
+        <CustomBlocksRenderer content={experience.description} />
         <div className='mt-3 flex flex-wrap gap-[10px]'>
           {experience.skills.map((skill, index) => (
             <Badge key={index} variant='custom'>
