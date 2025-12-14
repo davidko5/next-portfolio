@@ -74,7 +74,7 @@ export const metadata: Metadata = {
       'Davyd Kondratenko - Fullstack Developer with 3.5 years of commercial experience. Expert in React, Next.js, TypeScript, and NestJS. Currently building EV charger management systems at Sola. Portfolio includes full-stack projects with modern tech stack.',
     images: [
       {
-        url: '/profile-pic.webp',
+        url: 'https://portfolio.kondraten.dev/profile-pic.webp',
         width: 800,
         height: 800,
         alt: 'Davyd Kondratenko - Fullstack Developer',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: 'Davyd Kondratenko - Fullstack Developer',
     description:
       'Fullstack Developer with 3.5 years of experience specializing in React, Next.js, TypeScript, and NestJS. Building modern web applications.',
-    images: ['/profile-pic.webp'],
+    images: ['https://portfolio.kondraten.dev/profile-pic.webp'],
   },
   robots: {
     index: true,
