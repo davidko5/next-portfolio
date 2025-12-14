@@ -32,7 +32,7 @@ export async function RootLeftSide({
   const dict = await getDictionary(lang);
 
   return (
-    <div className='ml-6 md:ml-[72px] w-[517px] md:sticky top-0'>
+    <div className='max-w-[517px] md:sticky mx-auto top-0'>
       {/* Language Select Dropdown rendered here for wide screens */}
       <div className='flex justify-end md:hidden'>
         <LanguageSelect lang={lang} />

@@ -16,7 +16,7 @@ export function ProjectComponent({ project }: { project: Project }) {
         <Link href={project.projectUrl} target='_blank'>
           <div
             className={clsx(
-              'px-6 mb-3 pt-[10px] pb-[15px] rounded-[10px] transition-all ease-in-out duration-300',
+              'md:px-6 mb-3 pt-[10px] pb-[15px] rounded-[10px] transition-all ease-in-out duration-300',
               state
                 ? 'opacity-100 bg-projectBg shadow-[0px_0px_3px_0px] shadow-projectShadow'
                 : 'opacity-70'

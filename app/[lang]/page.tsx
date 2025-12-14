@@ -64,7 +64,7 @@ export default async function Page({
   if (!pageData) return null;
 
   return (
-    <>
+    <div className='container mx-auto'>
       <AnimatedGradientBackground />
       <PortfolioRoot
         generalInformation={pageData.generalInformation}
@@ -73,6 +73,6 @@ export default async function Page({
         projects={pageData.projects}
         lang={lang}
       />
-    </>
+    </div>
   );
 }

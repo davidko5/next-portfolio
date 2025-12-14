@@ -21,15 +21,15 @@ export async function RootRightSide({
   const dict = await getDictionary(lang);
 
   return (
-    <div className='w-[517px]'>
+    <div className='max-w-[517px] mx-auto'>
       {/* Language Select Dropdown rendered here for wide screens */}
       <div className='md:flex justify-end hidden'>
         <LanguageSelect lang={lang} />
       </div>
 
-      <div className='md:mr-[72px]'>
+      <div className=''>
         {/* About Section */}
-        <div className='ml-6'>
+        <div className='md:ml-6'>
           <h2 id='aboutMe' className='mt-[59px] text-2xl font-semibold'>
             {dict.aboutSection}
           </h2>
@@ -42,7 +42,7 @@ export async function RootRightSide({
         </div>
 
         {/* Experiences Section */}
-        <div className='ml-6'>
+        <div className='md:ml-6'>
           <h2 id='experience' className='mt-[82px] text-2xl font-semibold'>
             {dict.experienceSection}
           </h2>
@@ -71,7 +71,7 @@ export async function RootRightSide({
         {/* Projects Section */}
         <h2
           id='projects'
-          className='mt-[82px] mb-[34px] ml-6 text-2xl font-semibold'
+          className='mt-[82px] mb-[34px] md:ml-6 text-2xl font-semibold'
         >
           {dict.projectsSection}
         </h2>

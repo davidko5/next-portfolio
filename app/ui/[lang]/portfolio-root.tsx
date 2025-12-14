@@ -22,7 +22,7 @@ export function PortfolioRoot({
 }) {
   return (
     // overflow-auto is needed for left side to be sticky 
-    <div className='md:flex justify-between gap-10 h-[100vh] md:overflow-auto'>
+    <div className='md:flex justify-between gap-10 h-[100vh] md:overflow-auto scrollbar-hide px-4'>
       {/* Left Side */}
       <RootLeftSide
         lang={lang}
