@@ -22,15 +22,15 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    en: 'Davyd Kondratenko - Fullstack Developer | React, Next.js, TypeScript',
-    pl: 'Davyd Kondratenko - Fullstack Developer | React, Next.js, TypeScript',
-    ua: 'Давид Кондратенко - Fullstack Developer | React, Next.js, TypeScript',
+    en: 'Davyd Kondratenko - Fullstack Developer',
+    pl: 'Davyd Kondratenko - Fullstack Developer',
+    ua: 'Давид Кондратенко - Fullstack Developer',
   };
 
   const descriptions = {
-    en: 'Fullstack Developer with 3.5 years of experience specializing in React, Next.js, TypeScript, and NestJS. Currently developing EV charger management systems. Based in Rzeszów, Poland. View my portfolio and projects.',
-    pl: 'Fullstack Developer z 3.5-letnim doświadczeniem specjalizującym się w React, Next.js, TypeScript i NestJS. Obecnie rozwijam systemy zarządzania ładowarkami pojazdów elektrycznych. Rzeszów, Polska.',
-    ua: 'Fullstack Developer з 3.5 роками досвіду, що спеціалізується на React, Next.js, TypeScript та NestJS. Зараз розробляю системи управління зарядними станціями електромобілів. Жешув, Польща.',
+    en: 'Fullstack Developer with 3.5 years of experience in React, Next.js, TypeScript, and NestJS. Building EV charger management systems.',
+    pl: 'Fullstack Developer z 3.5-letnim doświadczeniem w React, Next.js, TypeScript i NestJS. Tworzę systemy zarządzania ładowarkami EV.',
+    ua: 'Fullstack Developer з 3.5 роками досвіду в React, Next.js, TypeScript та NestJS. Створюю системи управління зарядними станціями.',
   };
 
   const locales = {

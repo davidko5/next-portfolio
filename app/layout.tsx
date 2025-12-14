@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: '%s | Davyd Kondratenko',
   },
   description:
-    'Davyd Kondratenko - Fullstack Developer with 3.5 years of experience in React, Next.js, TypeScript, and NestJS. Specialized in building electric vehicle charger management systems, full-stack applications, and responsive web solutions. Based in Rzeszów, Poland.',
+    'Fullstack Developer with 3.5 years of experience in React, Next.js, TypeScript, and NestJS. Building EV charger management systems.',
   keywords: [
     'Davyd Kondratenko',
     'Fullstack Developer',
