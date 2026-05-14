@@ -1,0 +1,43 @@
+# Davyd Kondratenko — Full Stack Developer
+
+> Full Stack Developer with 3.5 years of experience shipping production applications with Next.js, React, and Node.js. Based in Rzeszów, Poland.
+
+## About
+
+- Name: Davyd Kondratenko
+- Role: Full Stack Developer at Boring Owl Software House
+- Location: Rzeszów, Poland (open to remote)
+- Languages: English (C1), Polish (C1), Ukrainian (Native)
+- Email: dajan526@gmail.com
+
+End-to-end delivery across Next.js / NestJS / Strapi backends with Docker-based deployment. Focus on performance optimization, scalable architecture, multi-tenant platforms, CMS-driven solutions, and high-traffic user-facing applications.
+
+## Tech Stack
+
+Proficient: TypeScript, Next.js, NestJS, Node.js, Strapi, React, JavaScript, React Query, Tailwind CSS, Git.
+
+Experienced with: Express, SQL, PostgreSQL, Docker, Zod, Playwright, Coolify, GitHub Actions, Redux/RTK, MongoDB, AWS, Firebase, shadcn/ui, React Testing Library, MUI, Python, CSS, HTML, GraphQL.
+
+## Experience
+
+- [08/2025 – Present] Full Stack Developer, Boring Owl Software House (Warsaw, Remote): SkinApe Next.js web migration reaching ~120K monthly visitors with ~20% conversion lift; internal offer management platform with role-based data isolation; Strapi/NestJS backends.
+- [07/2022 – 08/2025] Full Stack Developer, Sola (Kraków, Remote): EV charger management apps handling 500+ chargers used by 100+ operators; React/Next.js + NestJS; warranty module with scheduled checks; AI-powered operator assistant; led junior developers; Playwright e2e in CI/CD.
+- [08/2021 – 10/2021] PLC Programmer Intern, Milwes (Rzeszów).
+- [03/2019 – 09/2019] Debug Technician, ND Group (Kyiv).
+
+## Projects
+
+- Multi-Tenant Auth Service (MTAS) — https://multi-tenant-auth-service-mtas-ui.vercel.app/#about — NestJS, TypeORM, PostgreSQL, Next.js. Custom OAuth2-inspired flow, per-tenant isolation, RS256 + JWKS, HS256 internal tokens.
+- Personal Portfolio Powered by Strapi — https://portfolio.kondraten.dev/en — Next.js, Strapi CMS, SSG + ISR via webhooks, Tailwind, shadcn, Framer Motion.
+- Poster — https://davidko5.github.io/poster-frontend/posts — React, Redux, Express, MongoDB, Playwright e2e, CI/CD.
+
+## Education
+
+- Rzeszow University of Technology — Computer Science and Electrical Engineering (10/2018 – 02/2023).
+
+## Links
+
+- Portfolio: https://portfolio.kondraten.dev
+- GitHub: https://github.com/davidko5
+- LinkedIn: https://www.linkedin.com/in/davyd-kondratenko/
+- Resume (PDF): https://res.cloudinary.com/dj5h7oym9/image/upload/v1772397769/Davyd_Kondratenko_EN_10b097d4c1.pdf

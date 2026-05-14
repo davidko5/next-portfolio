@@ -1,42 +1,24 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+const DEFAULT_LANGUAGE = "en";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  console.log('Middleware triggered for path:', pathname);
-
-  // Skip middleware for static files and special routes
-  if (
-    pathname.startsWith('/_next') || // Static files (CSS, JS, etc.)
-    pathname.startsWith('/api') || // API routes
-    pathname === '/favicon.ico' || // Favicon
-    pathname === '/robots.txt' || // Robots.txt
-    pathname === '/sitemap.xml' || // Sitemap (if applicable)
-    /\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff|woff2|ttf|eot|otf)$/.test(
-      pathname
-    )
-  ) {
-    return NextResponse.next();
-  }
-
-  // Supported language prefixes
-  const supportedLanguages = ['en', 'pl', 'ua'];
-
-  // Check if the path starts with any supported language and has more than just the language segment
-  const isValidLang = supportedLanguages.some((lang) => {
-    return pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`;
-  });
-
-  // If the path is valid but has extra segments like /en/asdf, redirect to /en
-  if (!isValidLang || pathname.split('/').length > 2) {
-    return NextResponse.redirect(new URL('/en', request.url));
+  // Redirect only the bare root to the default locale.
+  // All other unmatched paths fall through so Next.js can render the proper 404
+  // (avoids soft-404s caused by catch-all redirects).
+  if (pathname === "/") {
+    return NextResponse.redirect(
+      new URL(`/${DEFAULT_LANGUAGE}`, request.url),
+      308,
+    );
   }
 
   return NextResponse.next();
 }
 
-// Matcher configuration (optional, simplifies logic)
 export const config = {
-  matcher: '/:path*',
+  matcher: "/",
 };
